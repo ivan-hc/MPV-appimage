@@ -35,7 +35,10 @@ ingredients:
     - savoury1/build-tools
     - savoury1/backports
     - savoury1/graphics
-    - savoury1/multimedia" >> recipe.yml;
+    - savoury1/multimedia
+  packages:
+    - mpv
+    - ffmpeg" >> recipe.yml;
 
 cp /opt/$APP/tmp/recipe.yml /opt/$APP/recipe.yml
 
