@@ -37,8 +37,7 @@ ingredients:
     - savoury1/graphics
     - savoury1/multimedia
   packages:
-    - mpv
-    - ffmpeg" >> recipe.yml;
+    - mpv" >> recipe.yml;
 
 cp /opt/$APP/tmp/recipe.yml /opt/$APP/recipe.yml
 
