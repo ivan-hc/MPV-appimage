@@ -19,7 +19,7 @@ jobs:
         chmod a+x ./mpv
         sudo ./mpv
         mkdir dist
-        VERSION=$(curl -sL https://ppa.launchpadcontent.net/savoury1/mpv/ubuntu/pool/main/m/mpv/ | grep -Po '(?<=href=")[^"]*(?=")' | grep mpv_ | grep 18.04 | tail -1 | cut -f1 -d "~" | grep -Eo "[0-9]+([.][0-9]+)?+[+-]?[0-9]?")
+        VERSION=$(curl -sL https://ppa.launchpadcontent.net/savoury1/mpv/ubuntu/pool/main/m/mpv/ | grep -Po '(?<=href=")[^"]*(?=")' | grep mpv_ | grep 18.04 | tail -1 | cut -f1 -d "~" | grep -Eo "[0-9]+([.][0-9]+)?+[+-]?[0-9]?" | head -1)
         mv /opt/mpv/mpv dist/MPV-Media-Player-$VERSION-x86_64.AppImage
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
