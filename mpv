@@ -64,24 +64,9 @@ export LD_LIBRARY_PATH=/lib/:/usr/lib/:/usr/lib/x86_64-linux-gnu/:"${HERE}"/usr/
 export PYTHONPATH="${HERE}"/usr/share/python3/:"${PYTHONPATH}"
 export XDG_DATA_DIRS="${HERE}"/usr/share/:"${XDG_DATA_DIRS}"
 export MPV_CONFIG_PATH=$HERE/etc/mpv/:$MPV_CONFIG_PATH
-EXEC=$(grep -e '^Exec=.*' "${HERE}"/*.desktop | head -n 1 | cut -d "=" -f 2- | sed -e 's|%.||g')
-exec ${EXEC} "$@"
+exec ${HERE}/usr/bin/mpv "$@"
 EOF
 chmod a+x ./$APP/$APP.AppDir/AppRun
-
-# REPLACE DESKTOP FILE
-rm -R -f ./$APP/$APP.AppDir/mpv.desktop
-cat >> ./$APP.desktop << 'EOF'
-[Desktop Entry]
-Type=Application
-Name=mpv Media Player
-Comment=Play movies and songs
-Icon=mpv
-Exec=mpv
-Terminal=false
-Categories=AudioVideo;Audio;Video;
-EOF
-mv ./$APP.desktop ./$APP/$APP.AppDir/$APP.desktop
 
 # ...IMPORT THE LAUNCHER AND THE ICON TO THE APPDIR (uncomment if not available)...
 #cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/22x22/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
