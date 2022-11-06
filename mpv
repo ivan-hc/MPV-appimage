@@ -34,13 +34,56 @@ ingredients:
   packages:
     - mpv
     - ffmpeg
-    - libavutil57
-    - libavcodec59
-    - libavformat59
-    - libswscale6
-    - libavfilter8
-    - libswresample4
-    - libva2" >> recipe.yml;
+    - libasound2
+    - libass9
+    - libavcodec-extra57
+    - libavcodec57
+    - libavdevice57
+    - libavfilter-extra6
+    - libavfilter6
+    - libavformat57
+    - libavutil55
+    - libbluray2
+    - libcaca0
+    - libcdio-cdda2
+    - libcdio-paranoia2
+    - libcdio17
+    - libdrm2
+    - libdvdnav4
+    - libdvdread4
+    - libegl1
+    - libgbm1
+    - libgl1
+    - libjack-0.125
+    - libjack-jackd2-0
+    - libjpeg8
+    - liblcms2-2
+    - liblua5.2-0
+    - libpulse0
+    - librubberband2
+    - libsdl2-2.0-0
+    - libsmbclient
+    - libsndio6.1
+    - libswresample2
+    - libswscale4
+    - libuchardet0
+    - libva-drm2
+    - libva-wayland2
+    - libva-x11-2
+    - libva2
+    - libvdpau1
+    - libwayland-client0
+    - libwayland-cursor0
+    - libwayland-egl1
+    - libwayland-egl1-mesa
+    - libx11-6
+    - libxext6
+    - libxinerama1
+    - libxkbcommon0
+    - libxrandr2
+    - libxss1
+    - libxv1
+    - zlib1g" >> recipe.yml;
 
 cp /opt/$APP/tmp/recipe.yml /opt/$APP/recipe.yml
 
