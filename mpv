@@ -11,8 +11,8 @@ cd tmp;
 
 # DOWNLOADING THE DEPENDENCIES
 wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage -O appimagetool
-wget https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/tools/pkg2appimage # 64 BIT ONLY (comment to disable)
-# wget https://github.com/ivan-hc/pkg2appimage-32bit/releases/download/continuous/pkg2appimage-i386.AppImage -O pkg2appimage # 32 BIT ONLY (uncomment to enable)
+pkg2appimageversion=$(curl -s https://api.github.com/repos/AppImageCommunity/pkg2appimage/releases/latest | grep browser_download_url | cut -d '"' -f 4 | head -1)
+wget $pkg2appimageversion -O pkg2appimage
 chmod a+x ./appimagetool ./pkg2appimage
 
 # CREATING THE APPIMAGE: APPDIR FROM A RECIPE...
@@ -32,63 +32,9 @@ ingredients:
     - savoury1/graphics
     - savoury1/multimedia
   packages:
-    - mpv
-    - ffmpeg
-    - libasound2
-    - libass9
-    - libavcodec-extra57
-    - libavcodec57
-    - libavdevice57
-    - libavfilter-extra6
-    - libavfilter6
-    - libavformat57
-    - libavutil55
-    - libbluray2
-    - libcaca0
-    - libcdio-cdda2
-    - libcdio-paranoia2
-    - libcdio17
-    - libdrm2
-    - libdvdnav4
-    - libdvdread4
-    - libegl1
-    - libgbm1
-    - libgl1
-    - libjack-0.125
-    - libjack-jackd2-0
-    - libjpeg8
-    - liblcms2-2
-    - liblua5.2-0
-    - libpulse0
-    - librubberband2
-    - libsdl2-2.0-0
-    - libsmbclient
-    - libsndio6.1
-    - libswresample2
-    - libswscale4
-    - libuchardet0
-    - libva-drm2
-    - libva-wayland2
-    - libva-x11-2
-    - libva2
-    - libvdpau1
-    - libwayland-client0
-    - libwayland-cursor0
-    - libwayland-egl1
-    - libwayland-egl1-mesa
-    - libx11-6
-    - libxext6
-    - libxinerama1
-    - libxkbcommon0
-    - libxrandr2
-    - libxss1
-    - libxv1
-    - zlib1g" >> recipe.yml;
-
-cp /opt/$APP/tmp/recipe.yml /opt/$APP/recipe.yml
+    - mpv" >> recipe.yml;
 
 ./pkg2appimage ./recipe.yml;
-cp /opt/$APP/tmp/$APP/$APP.AppDir/$APP.png /opt/$APP/$APP.png
 
 # ...DOWNLOADING LIBUNIONPRELOAD...
 wget https://github.com/project-portable/libunionpreload/releases/download/amd64/libunionpreload.so
@@ -110,18 +56,6 @@ export MPV_CONFIG_PATH=$HERE/etc/mpv/:$MPV_CONFIG_PATH
 exec ${HERE}/usr/bin/mpv "$@"
 EOF
 chmod a+x ./$APP/$APP.AppDir/AppRun
-
-# ...IMPORT THE LAUNCHER AND THE ICON TO THE APPDIR (uncomment if not available)...
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/22x22/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/24x24/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/32x32/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/48x48/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/64x64/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/128x128/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/256x256/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/512x512/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/icons/hicolor/scalable/apps/* ./$APP/$APP.AppDir/ 2>/dev/null
-#cp ./$APP/$APP.AppDir/usr/share/applications/* ./$APP/$APP.AppDir/ 2>/dev/null
 
 # ...EXPORT THE APPDIR TO AN APPIMAGE!
 ARCH=x86_64 ./appimagetool -n ./$APP/$APP.AppDir;
