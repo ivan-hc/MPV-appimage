@@ -3,6 +3,23 @@ This repository provides the script to create and install the latest version fro
 # Requirements
 The only requirement is `ffmpeg` that must be installed on your system
 
+# How to integrate MPV AppImage into the system
+The easier way is to install "AM" on your PC, see [ivan-hc/AM-application-manager](https://github.com/ivan-hc/AM-application-manager) for more.
+
+Alternatively, you can install it this way:
+
+    wget https://raw.githubusercontent.com/ivan-hc/AM-Application-Manager/main/programs/x86_64/mpv
+    chmod a+x ./mpv
+    sudo ./mpv
+The AppImage will be installed in /opt/mpv as `mpv`, near other files.
+### Update
+
+    /opt/mpv/AM-updater
+### Uninstall
+
+    sudo /opt/mpv/remove
+
+------------------------------------
 # About Rob Savoury's PPA 
 SITE: https://launchpad.net/~savoury1
 
