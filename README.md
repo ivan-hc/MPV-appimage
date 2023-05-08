@@ -1,5 +1,7 @@
 This repository provides the script to create and install the latest version from https://launchpad.net/~savoury1 and an AppImage ready to be used.
 
+### WARNING: this is the UNOFFICIAL AppImage built from PPA and may not work due to the continuous changes and new libraries required and only available on bleeding edge distributions. Rely on the version available for your distribution instead!
+
 # Requirements
 The only requirement is `ffmpeg` that must be installed on your system
 
