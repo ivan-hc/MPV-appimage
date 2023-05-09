@@ -1,5 +1,5 @@
 This repository provides the script to create and install the latest version from https://launchpad.net/~savoury1 and an AppImage ready to be used.
-#### WARNING: being the one built from PPA it is UNOFFICIAL and may not work due to the continuous changes and new libraries required and only available on bleeding edge distributions. Rely on the version available for your distribution instead!
+#### WARNING: being the one built from PPA an UNOFFICIAL AppImage, it may not work due to the continuous changes and new libraries required and only available on bleeding edge distributions. Rely on the version available for your distribution instead!
 
 If you wish to use AppImage packages that can work for sure, use the [STABLE RELEASES](https://github.com/ivan-hc/MPV-appimage/releases/tag/stable-releases) built from Debian.
 
