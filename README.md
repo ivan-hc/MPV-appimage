@@ -1,4 +1,4 @@
-This repository creates and distributes the unofficial Appimage of MPV Media Player built on top of JuNest, the lightweight Arch Linux based distro that runs, without root privileges, on top of any other Linux distro.
+This repository creates and distributes the unofficial Appimage of MPV Media Player built on top of JuNest (the lightweight Arch Linux based distro that runs, without root privileges, on top of any other Linux distro) and stable releases built from multiple development brances of Debian.
 
 ## Credits
 - JuNest https://github.com/fsquillace/junest
