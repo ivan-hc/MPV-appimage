@@ -24,7 +24,7 @@ wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 
 # BEING JUNEST STRICTLY MINIMAL, YOU NEED TO ADD ALL YOU NEED, INCLUDING BINUTILS AND GZIP IF YOU NEED TO COMPILE SOMETHING FROM AUR
 ./.local/share/junest/bin/junest -- sudo pacman -Syy
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
-./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf youtube-dl 
+./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp
 #./.local/share/junest/bin/junest -- yay --noconfirm -S $APP
 
 # SET THE LOCALE (DON'T TOUCH THIS)
@@ -122,13 +122,14 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/mpg123
 rm -R -f ./$APP.AppDir/.junest/usr/lib/omxloaders
 rm -R -f ./$APP.AppDir/.junest/usr/lib/openjpeg-2.5
 rm -R -f ./$APP.AppDir/.junest/usr/lib/openmpi
-rm -R -f ./$APP.AppDir/.junest/usr/lib/ossl-modules
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/ossl-modules
 rm -R -f ./$APP.AppDir/.junest/usr/lib/p11-kit
 rm -R -f ./$APP.AppDir/.junest/usr/lib/pam.d
 rm -R -f ./$APP.AppDir/.junest/usr/lib/perl5
 rm -R -f ./$APP.AppDir/.junest/usr/lib/pkcs11
 rm -R -f ./$APP.AppDir/.junest/usr/lib/pkgconfig
 rm -R -f ./$APP.AppDir/.junest/usr/lib/pmix
+rm -R -f ./$APP.AppDir/.junest/usr/lib/python*/__pycache__/*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/sasl2
 rm -R -f ./$APP.AppDir/.junest/usr/lib/security
 rm -R -f ./$APP.AppDir/.junest/usr/lib/ssh
@@ -205,8 +206,8 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_core-2.1.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_core.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_extra-2.1.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_extra.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_openssl-2.1.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_openssl.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_openssl-2.1.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_openssl.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_pthreads-2.1.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent_pthreads.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libevent.so*
@@ -245,7 +246,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libglslang-default-resource-limits.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libGLX_indirect.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libGLX_mesa.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libgmpxx.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libgnutls-openssl.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libgnutls-openssl.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libgnutlsxx.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libgo.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libgpgmepp.so*
@@ -329,7 +330,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libmpi_usempi_ignore_tkr.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnetfilter_conntrack.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnfnetlink.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnftnl.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libnghttp2.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libnghttp2.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnl-3.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnl-cli-3.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnl-genl-3.so*
