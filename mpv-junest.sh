@@ -75,7 +75,7 @@ sed -i 's/rm -f "${JUNEST_HOME}${bin_path}_wrappers/#rm -f "${JUNEST_HOME}${bin_
 sed -i 's/ln/#ln/g' ./$APP.AppDir/.local/share/junest/lib/core/wrappers.sh
 
 # REMOVE SOME BLOATWARES, ADD HERE ALL THE FOLDERS THAT YOU DON'T NEED FOR THE FINAL APPIMAGE
-rm -R -f ./$APP.AppDir/.junest/include
+rm -R -f ./$APP.AppDir/.junest/usr/include
 
 rm -R -f ./$APP.AppDir/.junest/usr/lib/*.a
 rm -R -f ./$APP.AppDir/.junest/usr/lib/*.mod
