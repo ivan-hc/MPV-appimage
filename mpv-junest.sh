@@ -24,7 +24,7 @@ wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 
 # BEING JUNEST STRICTLY MINIMAL, YOU NEED TO ADD ALL YOU NEED, INCLUDING BINUTILS AND GZIP IF YOU NEED TO COMPILE SOMETHING FROM AUR
 ./.local/share/junest/bin/junest -- sudo pacman -Syy
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
-./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp python-mpv ffmpeg
+./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp python-mpv ffmpeg streamlink
 #./.local/share/junest/bin/junest -- yay --noconfirm -S $APP
 
 # SET THE LOCALE (DON'T TOUCH THIS)
