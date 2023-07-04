@@ -388,7 +388,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libpsl.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libpsx.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/libpulse-mainloop-glib.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/libpulse-simple.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libPyImath*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libPyImath*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libquadmath.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libRemarks.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/libresolv.so*
