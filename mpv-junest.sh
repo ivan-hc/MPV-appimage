@@ -24,7 +24,7 @@ wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 
 # BEING JUNEST STRICTLY MINIMAL, YOU NEED TO ADD ALL YOU NEED, INCLUDING BINUTILS AND GZIP IF YOU NEED TO COMPILE SOMETHING FROM AUR
 ./.local/share/junest/bin/junest -- sudo pacman -Syy
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
-./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp gzip streamlink python-mpv ffmpeg
+./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp python-mpv ffmpeg
 #./.local/share/junest/bin/junest -- yay --noconfirm -S $APP
 
 # SET THE LOCALE (DON'T TOUCH THIS)
@@ -75,6 +75,7 @@ sed -i 's/rm -f "${JUNEST_HOME}${bin_path}_wrappers/#rm -f "${JUNEST_HOME}${bin_
 sed -i 's/ln/#ln/g' ./$APP.AppDir/.local/share/junest/lib/core/wrappers.sh
 
 # REMOVE SOME BLOATWARES, ADD HERE ALL THE FOLDERS THAT YOU DON'T NEED FOR THE FINAL APPIMAGE
+mv ./$APP.AppDir/.junest/usr/lib/libresolv.a ./libresolv.a
 rm -R -f ./$APP.AppDir/.junest/usr/lib/*.a
 rm -R -f ./$APP.AppDir/.junest/usr/lib/*.mod
 rm -R -f ./$APP.AppDir/.junest/usr/lib/*.o
@@ -129,7 +130,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/perl5
 rm -R -f ./$APP.AppDir/.junest/usr/lib/pkcs11
 rm -R -f ./$APP.AppDir/.junest/usr/lib/pkgconfig
 rm -R -f ./$APP.AppDir/.junest/usr/lib/pmix
-rm -R -f ./$APP.AppDir/.junest/usr/lib/python*/__pycache__/*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/python*/__pycache__/*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/python*/site-packages/*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/sasl2
 rm -R -f ./$APP.AppDir/.junest/usr/lib/security
@@ -167,9 +168,9 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libc_malloc_debug.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/libcom_err.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libcryptsetup.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libcrypt.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libcurl.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libcurses.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libcursesw.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libcurl.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libcurses.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libcursesw.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libdb-5.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libdb-6.2.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libdb-6.so*
@@ -387,7 +388,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libpsl.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libpsx.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/libpulse-mainloop-glib.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/libpulse-simple.so*
-#rm -R -f ./$APP.AppDir/.junest/usr/lib/libPyImath_Python3_11-3_1.so*
+rm -R -f ./$APP.AppDir/.junest/usr/lib/libPyImath*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libquadmath.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libRemarks.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/libresolv.so*
@@ -492,10 +493,14 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/p11-kit-proxy.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/preloadable_libintl.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/v4l1compat.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/v4l2convert.so*
+mv ./libresolv.a ./$APP.AppDir/.junest/usr/lib/
 
 mkdir -p ./save/share
+mv ./$APP.AppDir/.junest/usr/share/factory ./save/share/
 mv ./$APP.AppDir/.junest/usr/share/mpv* ./save/share/
+mv ./$APP.AppDir/.junest/usr/share/polkit* ./save/share/
 mv ./$APP.AppDir/.junest/usr/share/ytfzf ./save/share/
+mv ./$APP.AppDir/.junest/usr/share/zsh ./save/share/
 
 rm -R -f ./$APP.AppDir/.junest/usr/share/*
 rm -R -f ./$APP.AppDir/.junest/var
