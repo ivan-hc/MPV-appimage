@@ -24,7 +24,7 @@ wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 
 # BEING JUNEST STRICTLY MINIMAL, YOU NEED TO ADD ALL YOU NEED, INCLUDING BINUTILS AND GZIP IF YOU NEED TO COMPILE SOMETHING FROM AUR
 ./.local/share/junest/bin/junest -- sudo pacman -Syy
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
-./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp gzip streamlink python-mpv ffmpeg
+./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp gzip streamlink python-mpv ffmpeg gnutls
 #./.local/share/junest/bin/junest -- yay --noconfirm -S $APP
 
 # SET THE LOCALE (DON'T TOUCH THIS)
@@ -75,7 +75,7 @@ sed -i 's/rm -f "${JUNEST_HOME}${bin_path}_wrappers/#rm -f "${JUNEST_HOME}${bin_
 sed -i 's/ln/#ln/g' ./$APP.AppDir/.local/share/junest/lib/core/wrappers.sh
 
 # REMOVE SOME BLOATWARES, ADD HERE ALL THE FOLDERS THAT YOU DON'T NEED FOR THE FINAL APPIMAGE
-rm -R -f ./$APP.AppDir/.junest/usr/include
+#rm -R -f ./$APP.AppDir/.junest/usr/include
 
 rm -R -f ./$APP.AppDir/.junest/usr/lib/*.a
 rm -R -f ./$APP.AppDir/.junest/usr/lib/*.mod
@@ -496,6 +496,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/preloadable_libintl.so*
 #rm -R -f ./$APP.AppDir/.junest/usr/lib/v4l2convert.so*
 
 mkdir -p ./save/share
+mv ./$APP.AppDir/.junest/usr/share/ffmpeg ./save/share/
 mv ./$APP.AppDir/.junest/usr/share/mpv* ./save/share/
 mv ./$APP.AppDir/.junest/usr/share/*yt* ./save/share/
 
