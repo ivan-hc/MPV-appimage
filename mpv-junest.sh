@@ -24,7 +24,7 @@ wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 
 # BEING JUNEST STRICTLY MINIMAL, YOU NEED TO ADD ALL YOU NEED, INCLUDING BINUTILS AND GZIP IF YOU NEED TO COMPILE SOMETHING FROM AUR
 ./.local/share/junest/bin/junest -- sudo pacman -Syy
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
-./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp
+./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp bind nss-mdns
 #./.local/share/junest/bin/junest -- yay --noconfirm -S $APP
 
 # SET THE LOCALE (DON'T TOUCH THIS)
@@ -135,7 +135,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/security
 rm -R -f ./$APP.AppDir/.junest/usr/lib/ssh
 rm -R -f ./$APP.AppDir/.junest/usr/lib/sysctl.d
 rm -R -f ./$APP.AppDir/.junest/usr/lib/systemd
-rm -R -f ./$APP.AppDir/.junest/usr/lib/sysusers.d
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/sysusers.d
 rm -R -f ./$APP.AppDir/.junest/usr/lib/tar
 rm -R -f ./$APP.AppDir/.junest/usr/lib/tmpfiles.d
 rm -R -f ./$APP.AppDir/.junest/usr/lib/udev
@@ -302,7 +302,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libkrb5support.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libksba.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/liblber.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libldap.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libldns.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libldns.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libLLVM-15.0.7.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libLLVM-15.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libLLVM.so*
@@ -342,12 +342,12 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libnpth.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnsl.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_compat.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_db.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_dns.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_dns.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_files.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_hesiod.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_myhostname.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_mymachines.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_resolve.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_resolve.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libnss_systemd.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libobjc.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libompitrace.so*
@@ -389,7 +389,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libpulse-simple.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libPyImath_Python*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libquadmath.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libRemarks.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libresolv.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libresolv.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/librt.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/librubberband-jni.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libsasl2.so*
