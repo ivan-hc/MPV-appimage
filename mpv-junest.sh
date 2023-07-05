@@ -25,6 +25,7 @@ wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 
 ./.local/share/junest/bin/junest -- sudo pacman -Syy
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp bind nss-mdns
+./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Scc
 #./.local/share/junest/bin/junest -- yay --noconfirm -S $APP
 
 # SET THE LOCALE (DON'T TOUCH THIS)
@@ -497,7 +498,7 @@ mv ./$APP.AppDir/.junest/usr/share/mpv* ./save/share/
 mv ./$APP.AppDir/.junest/usr/share/*yt* ./save/share/
 
 rm -R -f ./$APP.AppDir/.junest/usr/share/*
-rm -R -f ./$APP.AppDir/.junest/var
+#rm -R -f ./$APP.AppDir/.junest/var
 
 mv ./save/share/* ./$APP.AppDir/.junest/usr/share/
 
