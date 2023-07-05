@@ -23,9 +23,7 @@ jobs:
         chmod a+x ./mpv-junest.sh
         ./mpv-junest.sh
         mkdir dist
-        VERSION=$(wget -q https://archlinux.org/packages/extra/x86_64/mpv/ -O - | grep mpv | head -1 | grep -o -P '(?<='mpv' 1:).*(?=</)' | rev | cut -c 10- | rev)
-        BUILD=$(date +%Y%m%d)
-        mv *AppImage dist/MPV-$VERSION-$BUILD-x86_64.AppImage
+        mv *AppImage dist/
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
