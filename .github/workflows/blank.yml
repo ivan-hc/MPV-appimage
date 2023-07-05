@@ -45,7 +45,7 @@ jobs:
           with:
             title: Continuous build
             automatic_release_tag: continuous
-            prerelease: true
+            prerelease: false
             draft: false
             files: |
               MPV-Media-Player-x86_64.AppImage
