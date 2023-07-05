@@ -25,7 +25,6 @@ wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 
 ./.local/share/junest/bin/junest -- sudo pacman -Syy
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
 ./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S mpv ytfzf yt-dlp bind nss-mdns
-./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Scc
 #./.local/share/junest/bin/junest -- yay --noconfirm -S $APP
 
 # SET THE LOCALE (DON'T TOUCH THIS)
@@ -36,7 +35,7 @@ wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 
 rm ./.junest/etc/locale.conf
 echo "LANG=$LANG" >> ./.junest/etc/locale.conf
 sed -i 's/LANG=${LANG:-C}/LANG=$LANG/g' ./.junest/etc/profile.d/locale.sh
-#./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S glibc gzip
+./.local/share/junest/bin/junest -- sudo pacman --noconfirm -S glibc gzip
 #./.local/share/junest/bin/junest -- sudo locale-gen
 
 # VERSION NAME, BY DEFAULT THIS POINTS TO THE NUMBER, CHANGE 'REPO' TO 'core', 'extra'...
@@ -498,7 +497,7 @@ mv ./$APP.AppDir/.junest/usr/share/mpv* ./save/share/
 mv ./$APP.AppDir/.junest/usr/share/*yt* ./save/share/
 
 rm -R -f ./$APP.AppDir/.junest/usr/share/*
-#rm -R -f ./$APP.AppDir/.junest/var
+rm -R -f ./$APP.AppDir/.junest/var
 
 mv ./save/share/* ./$APP.AppDir/.junest/usr/share/
 
