@@ -510,4 +510,4 @@ mkdir -p ./$APP.AppDir/.junest/media
 
 # CREATE THE APPIMAGE
 ARCH=x86_64 ./appimagetool -n ./$APP.AppDir
-mv ./*AppImage ./MPV_$VERSION-x86_64.AppImage
+mv ./*AppImage ./MPV-Media-Player_$VERSION-x86_64.AppImage
