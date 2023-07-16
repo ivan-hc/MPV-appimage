@@ -58,14 +58,13 @@ cp ./$APP.AppDir/.junest/usr/share/applications/*$APP* ./$APP.AppDir/
 # THE APPROACH "echo "$APP $@" | $HERE/.local/share/junest/bin/junest -n" ALLOWS YOU TO RUN THE APP IN A JUNEST SECTION DIRECTLY
 # EDIT THE FOLLOWING LINES IF YOU THINK SOME ENVIRONMENT VARIABLES ARE MISSING
 cat >> ./$APP.AppDir/AppRun << 'EOF'
-#!/bin/sh
 APP=mpv
 HERE="$(dirname "$(readlink -f $0)")"
 export UNION_PRELOAD=$HERE
 export JUNEST_HOME=$HERE/.junest
 export PATH=$HERE/.local/share/junest/bin/:$PATH
 mkdir -p $HOME/.cache
-$HERE/.local/share/junest/bin/junest proot -n -b "--bind=/home --bind=/home/$(echo $USER) --bind=/media --bind=/opt --bind=/etc" 2> /dev/null -- $APP "$@"
+$HERE/.local/share/junest/bin/junest proot -n -b "--bind=/home --bind=/home/$(echo $USER) --bind=/media --bind=/opt --bind=/usr/share --bind=/usr/lib/locale --bind=/etc" 2> /dev/null -- $APP "$@"
 EOF
 chmod a+x ./$APP.AppDir/AppRun
 
@@ -242,7 +241,7 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libgfortran.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libgif.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libglapi.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libGLESv2.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libglslang-default-resource-limits.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libglslang-default-resource-limits.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libGLX_indirect.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libGLX_mesa.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libgmpxx.so*
