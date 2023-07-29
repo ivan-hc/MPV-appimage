@@ -3,7 +3,7 @@
 # NAME OF THE APP BY REPLACING "SAMPLE"
 APP=mpv
 BIN="$APP" #CHANGE THIS IF THE NAME OF THE BINARY IS DIFFERENT FROM "$APP" (for example, the binary of "obs-studio" is "obs")
-DEPENDENCES="ytfzf yt-dlp bind nss-mdns" #SYNTAX: "APP1 APP2 APP3 APP4...", LEAVE BLANK IF NO OTHER DEPENDENCES ARE NEEDED
+DEPENDENCES="libxpresent ytfzf yt-dlp bind nss-mdns" #SYNTAX: "APP1 APP2 APP3 APP4...", LEAVE BLANK IF NO OTHER DEPENDENCES ARE NEEDED
 #BASICSTUFF="binutils gzip"
 #COMPILERS="gcc"
 
@@ -1581,23 +1581,23 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/libverto.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libwebpdecoder.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libwebpdemux.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libxatracker.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-composite.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-damage.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-dpms.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-dri2.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-glx.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-present.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-record.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-res.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-screensaver.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-sync.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xf86dri.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xinerama.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xinput.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xkb.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xtest.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xvmc.so*
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xv.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-composite.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-damage.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-dpms.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-dri2.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-glx.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-present.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-record.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-res.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-screensaver.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-sync.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xf86dri.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xinerama.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xinput.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xkb.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xtest.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xvmc.so*
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libxcb-xv.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libXcursor.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libXdamage.so*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/libXft.so*
