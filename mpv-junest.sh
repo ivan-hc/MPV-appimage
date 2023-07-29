@@ -1213,13 +1213,12 @@ rm -R -f ./$APP.AppDir/.junest/usr/lib/cryptsetup
 rm -R -f ./$APP.AppDir/.junest/usr/lib/d3d
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dbus-1.0
 rm -R -f ./$APP.AppDir/.junest/usr/lib/depmod.d
-rm -R -f ./$APP.AppDir/.junest/usr/lib/dri
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/crocus_dri.so
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/d3d12_dri.so
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/i*
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/kms_swrast_dri.so
-rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/nouveau_dri.so
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/r*
+rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/nouveau_dri.so
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/radeonsi_dri.so
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/virtio_gpu_dri.so
 rm -R -f ./$APP.AppDir/.junest/usr/lib/dri/vmwgfx_dri.so
