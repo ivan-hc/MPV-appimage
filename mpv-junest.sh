@@ -214,7 +214,7 @@ _include_swrast_dri(){
 }
 
 _libkeywords(){
-	LIBSAVED="dns libglslang libmujs pkgconfig python resolv ssl sysusers.d v4l vdpau" # Enter here keywords or file/folder names to save in /usr/lib.
+	LIBSAVED="dns libdl libglslang libmujs pkgconfig python resolv ssl sysusers.d v4l vdpau" # Enter here keywords or file/folder names to save in /usr/lib.
 	for arg in $LIBSAVED; do
 		for var in $arg; do
  			mv ./$APP.AppDir/.junest/usr/lib/*"$arg"* ./save/
