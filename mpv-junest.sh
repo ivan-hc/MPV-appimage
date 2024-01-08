@@ -23,7 +23,9 @@ HOME="$(dirname "$(readlink -f $0)")"
 
 # DOWNLOAD AND INSTALL JUNEST (DON'T TOUCH THIS)
 git clone https://github.com/fsquillace/junest.git ~/.local/share/junest
-./.local/share/junest/bin/junest setup
+wget -q --show-progress https://github.com/ivan-hc/junest/releases/download/continuous/junest-x86_64.tar.gz
+./.local/share/junest/bin/junest setup -i junest-x86_64.tar.gz
+rm -f junest-x86_64.tar.gz
 
 # ENABLE MULTILIB (optional)
 echo "
@@ -172,7 +174,7 @@ rm -R -f ./$APP.AppDir/.junest/var/* #REMOVE ALL PACKAGES DOWNLOADED WITH THE PA
 
 BINSAVED="certificates ffmpeg yt" # Enter here keywords to find and save in /usr/bin
 SHARESAVED="certificates ffmpeg yt" # Enter here keywords or file/folder names to save in both /usr/share and /usr/lib
-LIBSAVED="pk p11 alsa jack pipewire pulse v4l" # Enter here keywords or file/folder names to save in /usr/lib
+LIBSAVED="pk p11 alsa jack pipewire pulse libmujs v4l" # Enter here keywords or file/folder names to save in /usr/lib
 
 # STEP 1, CREATE A BACKUP FOLDER WHERE TO SAVE THE FILES TO BE DISCARDED (USEFUL FOR TESTING PURPOSES)
 mkdir -p ./junest-backups/usr/bin
