@@ -338,4 +338,4 @@ mkdir -p ./$APP.AppDir/.junest/run/user
 
 # CREATE THE APPIMAGE
 ARCH=x86_64 ./appimagetool -n ./$APP.AppDir
-mv ./*AppImage ./MPV-Media-Player_$VERSION-archimage3-x86_64.AppImage
+mv ./*AppImage ./MPV-Media-Player_$VERSION-archimage3-1-x86_64.AppImage
