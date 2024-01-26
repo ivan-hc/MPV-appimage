@@ -102,8 +102,8 @@ if test -f /etc/resolv.conf; then
 fi
 EXEC=$(grep -e '^Exec=.*' "${HERE}"/*.desktop | head -n 1 | cut -d "=" -f 2- | sed -e 's|%.||g')
 case "$1" in
-	'') $HERE/.local/share/junest/bin/junest -n 2> /dev/null -- $EXEC "$@";;
-	*) $HERE/.local/share/junest/bin/junest -n 2> /dev/null -- mpv "$@";;
+	'') $HERE/.local/share/junest/bin/junest -n -b "$ETC_RESOLV" 2> /dev/null -- $EXEC "$@";;
+	*) $HERE/.local/share/junest/bin/junest -n -b "$ETC_RESOLV" 2> /dev/null -- mpv "$@";;
 esac
 EOF
 chmod a+x ./AppRun
@@ -343,4 +343,4 @@ mkdir -p ./$APP.AppDir/.junest/run/user
 
 # CREATE THE APPIMAGE
 ARCH=x86_64 ./appimagetool -n ./$APP.AppDir
-mv ./*AppImage ./MPV-Media-Player_"$VERSION"-archimage3.1-x86_64.AppImage
+mv ./*AppImage ./MPV-Media-Player_"$VERSION"-archimage3.1-1-x86_64.AppImage
