@@ -324,10 +324,10 @@ rsync -av ./base/* ./$APP.AppDir/.junest/
 
 # RSYNC DEPENDENCES
 rm -R -f ./deps/.*
-rsync -av ./deps/* ./$APP.AppDir/.junest/
+#rsync -av ./deps/* ./$APP.AppDir/.junest/
 
 # ADDITIONAL REMOVALS
-mv ./$APP.AppDir/.junest/usr/lib/libLLVM-* ./junest-backups/usr/lib/ #INCLUDED IN THE COMPILATION PHASE, CAN SOMETIMES BE EXCLUDED FOR DAILY USE
+#mv ./$APP.AppDir/.junest/usr/lib/libLLVM-* ./junest-backups/usr/lib/ #INCLUDED IN THE COMPILATION PHASE, CAN SOMETIMES BE EXCLUDED FOR DAILY USE
 rm -R -f ./$APP.AppDir/.junest/usr/lib/python*/__pycache__/* #IF PYTHON IS INSTALLED, REMOVING THIS DIRECTORY CAN SAVE SEVERAL MEGABYTES
 
 # REMOVE THE INBUILT HOME
@@ -343,4 +343,4 @@ mkdir -p ./$APP.AppDir/.junest/run/user
 
 # CREATE THE APPIMAGE
 ARCH=x86_64 ./appimagetool -n ./$APP.AppDir
-mv ./*AppImage ./MPV-Media-Player_"$VERSION"-archimage3.1-deps-x86_64.AppImage
+mv ./*AppImage ./MPV-Media-Player_"$VERSION"-archimage3.1-llvm-x86_64.AppImage
