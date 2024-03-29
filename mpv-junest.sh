@@ -252,7 +252,7 @@ function _binlibs(){
 
 function _include_swrast_dri(){
 	mkdir ./save/dri
-	mv ./$APP.AppDir/.junest/usr/lib/dri/swrast_dri.so ./save/dri/
+	mv ./$APP.AppDir/.junest/usr/lib/dri/*swrast* ./save/dri/
 }
 
 function _libkeywords(){
@@ -294,7 +294,7 @@ function _mvlibs(){
 
 _binlibs 2> /dev/null
 
-#_include_swrast_dri 2> /dev/null
+_include_swrast_dri 2> /dev/null
 
 _libkeywords 2> /dev/null
 
@@ -338,7 +338,7 @@ rm -R -f ./deps/.*
 #rsync -av ./deps/* ./$APP.AppDir/.junest/
 
 # ADDITIONAL REMOVALS
-rm -R -f ./$APP.AppDir/.junest/usr/lib/libLLVM-* #INCLUDED IN THE COMPILATION PHASE, CAN SOMETIMES BE EXCLUDED FOR DAILY USE
+#rm -R -f ./$APP.AppDir/.junest/usr/lib/libLLVM-* #INCLUDED IN THE COMPILATION PHASE, CAN SOMETIMES BE EXCLUDED FOR DAILY USE
 rm -R -f ./$APP.AppDir/.junest/usr/lib/python*/__pycache__/* #IF PYTHON IS INSTALLED, REMOVING THIS DIRECTORY CAN SAVE SEVERAL MEGABYTES
 
 # REMOVE THE INBUILT HOME
@@ -357,4 +357,4 @@ if test -f ./*.AppImage; then
 	rm -R -f ./*archimage*.AppImage
 fi
 ARCH=x86_64 VERSION=$(./appimagetool -v | grep -o '[[:digit:]]*') ./appimagetool -s ./$APP.AppDir
-mv ./*AppImage ./MPV-Media-Player_"$VERSION"-archimage3.4-x86_64.AppImage
+mv ./*AppImage ./MPV-Media-Player_"$VERSION"-vm-archimage3.4-x86_64.AppImage
