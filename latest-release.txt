@@ -1,1 +1,1 @@
-https://github.com/ivan-hc/MPV-appimage/releases/download/continuous/mpv-Media-Player_0.40.0-2-archimage4.3-x86_64.AppImage
+https://github.com/ivan-hc/MPV-appimage/releases/download/continuous/mpv-Media-Player_0.40.0-3-archimage4.3-x86_64.AppImage
