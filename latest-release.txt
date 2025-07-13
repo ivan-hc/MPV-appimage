@@ -1,2 +1,2 @@
 https://github.com/ivan-hc/MPV-appimage/releases/download/continuous/mpv-Media-Player_0.40.0-3-archimage4.3-x86_64.AppImage
-Sat Jul 12 01:50:03 UTC 2025
+Sun Jul 13 01:58:00 UTC 2025
